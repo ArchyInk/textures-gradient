@@ -2,8 +2,8 @@
   "name": "textures-gradient",
   "version": "1.0.0",
   "description": "add gradient effect on the basis of d3.textures",
-  "main": "dist/textures.js",
-  "module": "dist/textures.esm.js",
+  "main": "dist/textures-gradient.js",
+  "module": "dist/textures-gradient.esm.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArchyInk/textures-gradient.git"

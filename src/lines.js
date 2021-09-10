@@ -2,8 +2,8 @@
  * @Author: Archy
  * @Date: 2021-09-09 14:09:00
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-10 14:53:52
- * @FilePath: \textures\src\lines.js
+ * @LastEditTime: 2021-09-10 17:06:12
+ * @FilePath: \textures-gradient\src\lines.js
  * @description: 在textures源码的基础上添加了line类型的渐变
  */
 import rand from "./random.js";
@@ -89,15 +89,8 @@ export default function lines() {
 					.attr("id", "chunk_" + i)
 					.attr("patternUnits", "objectBoundingBox")
 					.attr("width", 1)
-					.attr("height", 1)
-					.attr(
-						"x",
-						i == 0
-							? "0"
-							: (box.width *
-									(linearGradient[i - 1].stop - linearGradient[i - 1].start)) /
-									100
-					);
+					.attr("height", 1);
+
 				for (let j in colors) {
 					const pattern = defs
 						.append("pattern")
@@ -127,11 +120,7 @@ export default function lines() {
 					.attr("height", box.height)
 					.attr(
 						"x",
-						i > 0
-							? (box.width *
-									(linearGradient[i - 1].stop - linearGradient[i - 1].start)) /
-									100
-							: "0"
+						i > 0 ? (box.width * linearGradient[i - 1].stop) / 100 : "0"
 					)
 					.style("fill", `url(#chunk_${i})`);
 			}

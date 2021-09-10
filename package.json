@@ -1,0 +1,51 @@
+{
+  "name": "textures-gradient",
+  "version": "1.0.0",
+  "description": "add gradient effect on the basis of d3.textures",
+  "main": "dist/textures.js",
+  "module": "dist/textures.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArchyInk/textures-gradient.git"
+  },
+  "keywords": [
+    "d3"
+  ],
+  "author": {
+    "name": "archy",
+    "email": "archybool@gmail.com",
+    "url": "http://archy.ink/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArchyInk/textures-gradient/issues"
+  },
+  "homepage": "https://github.com/ArchyInk/textures-gradient#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "d3-scale": "^4.0.0",
+    "d3-selection": "^2.0.0",
+    "faucet": "^0.0.1",
+    "jsdom": "^16.2.2",
+    "np": "^7.4.0",
+    "rollup": "^1.18.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "tape": "^5.0.1",
+    "xo": "^0.39.1"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "xo src/**/*.js && xo tests/**/*.js && tape tests/**/*.js | faucet",
+    "pretest": "rollup -c",
+    "pub": "np"
+  },
+  "files": [
+    "dist"
+  ]
+}

@@ -1,5 +1,5 @@
 # textures-gradient
-在d3.js插件d3.textures基础上加上渐变效果
+在d3.js插件d3.textures基础上加上渐变效果，兼容texture原来的api，目前只有line的渐变，且方向只能垂直，其他方向后面有兴趣再写
 
 [d3.textures](https://riccardoscalco.it/textures/)
 
@@ -29,5 +29,5 @@ rect.style("fill", t.url());
 
 ```
 
-![效果](.\example.png)
+![](https://github.com/ArchyInk/textures-gradient/blob/main/example.png)
 

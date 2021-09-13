@@ -225,7 +225,7 @@ function lines() {
     selection.select("defs[type=texture]").remove();
     var box = selection.node().getBBox();
 
-    if (linearGradient) {
+    if (Array.isArray(linearGradient)) {
       var defs = selection.append("defs").attr("type", "texture");
       group = defs.append("pattern").attr("id", id).attr("patternUnits", "objectBoundingBox").attr("width", 1).attr("height", 1).attr("x", box.x);
 

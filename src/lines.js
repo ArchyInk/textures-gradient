@@ -2,8 +2,8 @@
  * @Author: Archy
  * @Date: 2021-09-09 14:09:00
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-13 15:53:04
- * @FilePath: \textures-gradient\src\lines.js
+ * @LastEditTime: 2021-09-13 17:26:43
+ * @FilePath: \archy_ink\textures-gradient\src\lines.js
  * @description: 在textures源码的基础上添加了line类型的渐变
  */
 import rand from "./random.js";
@@ -61,7 +61,7 @@ export default function lines() {
 		let group = null;
 		selection.select("defs[type=texture]").remove();
 		const box = selection.node().getBBox();
-		if (linearGradient) {
+		if (Array.isArray(linearGradient)) {
 			const defs = selection.append("defs").attr("type", "texture");
 			group = defs
 				.append("pattern")

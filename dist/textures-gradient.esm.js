@@ -221,8 +221,8 @@ function lines() {
   };
 
   var $ = function $(selection) {
-    var group = null; // selection.select("defs[type=texture]").remove();
-
+    var group = null;
+    selection.select("defs[type=texture]").remove();
     var box = selection.node().getBBox();
 
     if (linearGradient) {
@@ -232,7 +232,6 @@ function lines() {
       for (var i in linearGradient) {
         var rate = (linearGradient[i].stop - linearGradient[i].start) / 100;
         var colorNum = Math.floor(linearGradient[i].stop - linearGradient[i].start);
-        var chunkWidth = box.width * rate;
         var colors = [];
         var x = d3.scaleLinear().domain([0, colorNum]).range([linearGradient[i].startColor, linearGradient[i].stopColor]);
 

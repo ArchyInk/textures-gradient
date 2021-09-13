@@ -2,7 +2,7 @@
  * @Author: Archy
  * @Date: 2021-09-09 14:09:00
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-10 17:06:12
+ * @LastEditTime: 2021-09-13 15:53:04
  * @FilePath: \textures-gradient\src\lines.js
  * @description: 在textures源码的基础上添加了line类型的渐变
  */
@@ -59,7 +59,7 @@ export default function lines() {
 
 	const $ = (selection) => {
 		let group = null;
-		// selection.select("defs[type=texture]").remove();
+		selection.select("defs[type=texture]").remove();
 		const box = selection.node().getBBox();
 		if (linearGradient) {
 			const defs = selection.append("defs").attr("type", "texture");
@@ -75,7 +75,6 @@ export default function lines() {
 				const colorNum = Math.floor(
 					linearGradient[i].stop - linearGradient[i].start
 				);
-				const chunkWidth = box.width * rate;
 				const colors = [];
 				const x = d3
 					.scaleLinear()
@@ -112,7 +111,8 @@ export default function lines() {
 						.attr("width", box.width / 100)
 						.attr("height", box.height)
 						.attr("x", (box.width * j) / 100)
-						.style("fill", `url(#colormap_${i}_${j})`);
+						.style("fill", `url(#colormap_${i}_${j})`)
+
 				}
 				const rect = group.append("rect");
 				rect

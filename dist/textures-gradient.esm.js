@@ -176,43 +176,43 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
 
 function lines() {
   var size = 20;
-  var stroke = "#343434";
+  var stroke = '#343434';
   var strokeWidth = 2;
-  var background = "";
+  var background = '';
   var id = random();
-  var orientation = ["diagonal"];
-  var shapeRendering = "auto";
+  var orientation = ['diagonal'];
+  var shapeRendering = 'auto';
   var linearGradient = [];
 
   var path = function path(orientation) {
     var s = size;
 
     switch (orientation) {
-      case "0/8":
-      case "vertical":
+      case '0/8':
+      case 'vertical':
         return "M ".concat(s / 2, ", 0 l 0, ").concat(s);
 
-      case "1/8":
+      case '1/8':
         return "M ".concat(-s / 4, ",").concat(s, " l ").concat(s / 2, ",").concat(-s, " M ").concat(s / 4, ",").concat(s, " l ").concat(s / 2, ",").concat(-s, " M ").concat(s * 3 / 4, ",").concat(s, " l ").concat(s / 2, ",").concat(-s);
 
-      case "2/8":
-      case "diagonal":
+      case '2/8':
+      case 'diagonal':
         return "M 0,".concat(s, " l ").concat(s, ",").concat(-s, " M ").concat(-s / 4, ",").concat(s / 4, " l ").concat(s / 2, ",").concat(-s / 2, " M ").concat(3 / 4 * s, ",").concat(5 / 4 * s, " l ").concat(s / 2, ",").concat(-s / 2);
 
-      case "3/8":
+      case '3/8':
         return "M 0,".concat(3 / 4 * s, " l ").concat(s, ",").concat(-s / 2, " M 0,").concat(s / 4, " l ").concat(s, ",").concat(-s / 2, " M 0,").concat(s * 5 / 4, " l ").concat(s, ",").concat(-s / 2);
 
-      case "4/8":
-      case "horizontal":
+      case '4/8':
+      case 'horizontal':
         return "M 0,".concat(s / 2, " l ").concat(s, ",0");
 
-      case "5/8":
+      case '5/8':
         return "M 0,".concat(-s / 4, " l ").concat(s, ",").concat(s / 2, "M 0,").concat(s / 4, " l ").concat(s, ",").concat(s / 2, " M 0,").concat(s * 3 / 4, " l ").concat(s, ",").concat(s / 2);
 
-      case "6/8":
+      case '6/8':
         return "M 0,0 l ".concat(s, ",").concat(s, " M ").concat(-s / 4, ",").concat(3 / 4 * s, " l ").concat(s / 2, ",").concat(s / 2, " M ").concat(s * 3 / 4, ",").concat(-s / 4, " l ").concat(s / 2, ",").concat(s / 2);
 
-      case "7/8":
+      case '7/8':
         return "M ".concat(-s / 4, ",0 l ").concat(s / 2, ",").concat(s, " M ").concat(s / 4, ",0 l ").concat(s / 2, ",").concat(s, " M ").concat(s * 3 / 4, ",0 l ").concat(s / 2, ",").concat(s);
 
       default:
@@ -222,12 +222,12 @@ function lines() {
 
   var $ = function $(selection) {
     var group = null;
-    selection.select("defs[type=texture]").remove();
+    selection.select('defs[type=texture]').remove();
     var box = selection.node().getBBox();
 
-    if (Array.isArray(linearGradient)) {
-      var defs = selection.append("defs").attr("type", "texture");
-      group = defs.append("pattern").attr("id", id).attr("patternUnits", "objectBoundingBox").attr("width", 1).attr("height", 1).attr("x", box.x);
+    if (Array.isArray(linearGradient) && linearGradient.length > 0) {
+      var defs = selection.append('defs').attr('type', 'texture');
+      group = defs.append('pattern').attr('id', id).attr('patternUnits', 'objectBoundingBox').attr('width', 1).attr('height', 1).attr('x', box.x);
 
       for (var i in linearGradient) {
         var rate = (linearGradient[i].stop - linearGradient[i].start) / 100;
@@ -239,10 +239,10 @@ function lines() {
           colors.push(x(_i));
         }
 
-        var chunk = defs.append("pattern").attr("id", "chunk_" + i).attr("patternUnits", "objectBoundingBox").attr("width", 1).attr("height", 1);
+        var chunk = defs.append('pattern').attr('id', 'chunk_' + i).attr('patternUnits', 'objectBoundingBox').attr('width', 1).attr('height', 1);
 
         for (var j in colors) {
-          var pattern = defs.append("pattern").attr("id", "colormap_" + i + "_" + j).attr("patternUnits", "userSpaceOnUse").attr("width", size).attr("height", size);
+          var pattern = defs.append('pattern').attr('id', 'colormap_' + i + '_' + j).attr('patternUnits', 'userSpaceOnUse').attr('width', size).attr('height', size);
 
           var _iterator = _createForOfIteratorHelper(orientation),
               _step;
@@ -250,7 +250,7 @@ function lines() {
           try {
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
               var o = _step.value;
-              pattern.append("path").attr("d", path(o)).attr("stroke-width", strokeWidth).attr("shape-rendering", shapeRendering).attr("stroke", colors[j]).attr("stroke-linecap", "square");
+              pattern.append('path').attr('d', path(o)).attr('stroke-width', strokeWidth).attr('shape-rendering', shapeRendering).attr('stroke', colors[j]).attr('stroke-linecap', 'square');
             }
           } catch (err) {
             _iterator.e(err);
@@ -258,19 +258,19 @@ function lines() {
             _iterator.f();
           }
 
-          var _rect = chunk.append("rect");
+          var _rect = chunk.append('rect');
 
-          _rect.attr("width", box.width / 100).attr("height", box.height).attr("x", box.width * j / 100).style("fill", "url(#colormap_".concat(i, "_").concat(j, ")"));
+          _rect.attr('width', box.width / 100).attr('height', box.height).attr('x', box.width * j / 100).style('fill', "url(#colormap_".concat(i, "_").concat(j, ")"));
         }
 
-        var rect = group.append("rect");
-        rect.attr("width", box.width * rate).attr("height", box.height).attr("x", i > 0 ? box.width * linearGradient[i - 1].stop / 100 : "0").style("fill", "url(#chunk_".concat(i, ")"));
+        var rect = group.append('rect');
+        rect.attr('width', box.width * rate).attr('height', box.height).attr('x', i > 0 ? box.width * linearGradient[i - 1].stop / 100 : '0').style('fill', "url(#chunk_".concat(i, ")"));
       }
     } else {
-      group = selection.append("defs").attr("type", "texture").append("pattern").attr("id", id).attr("patternUnits", "userSpaceOnUse").attr("width", size).attr("height", size);
+      group = selection.append('defs').attr('type', 'texture').append('pattern').attr('id', id).attr('patternUnits', 'userSpaceOnUse').attr('width', size).attr('height', size);
 
       if (background) {
-        group.append("rect").attr("width", size).attr("height", size).attr("fill", background);
+        group.append('rect').attr('width', size).attr('height', size).attr('fill', background);
       }
 
       var _iterator2 = _createForOfIteratorHelper(orientation),
@@ -279,7 +279,7 @@ function lines() {
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
           var _o = _step2.value;
-          group.append("path").attr("d", path(_o)).attr("stroke-width", strokeWidth).attr("shape-rendering", shapeRendering).attr("stroke", stroke).attr("stroke-linecap", "square");
+          group.append('path').attr('d', path(_o)).attr('stroke-width', strokeWidth).attr('shape-rendering', shapeRendering).attr('stroke', stroke).attr('stroke-linecap', 'square');
         }
       } catch (err) {
         _iterator2.e(err);

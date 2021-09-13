@@ -2,8 +2,8 @@
  * @Author: Archy
  * @Date: 2021-09-10 14:56:38
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-13 16:34:51
- * @FilePath: \textures-gradient\README.md
+ * @LastEditTime: 2021-09-13 16:49:11
+ * @FilePath: \archy_ink\textures-gradient\README.md
  * @description: 
 -->
 # textures-gradient
@@ -12,6 +12,7 @@
 [d3.textures](https://riccardoscalco.it/textures/)
 
 使用方式
+`npm install textures-gradient`
 
 ```javascript
 import texturesGradient from 'textures-gradient'

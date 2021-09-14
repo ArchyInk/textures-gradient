@@ -2,7 +2,7 @@
  * @Author: Archy
  * @Date: 2021-09-10 14:56:38
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-13 16:49:11
+ * @LastEditTime: 2021-09-14 10:17:16
  * @FilePath: \archy_ink\textures-gradient\README.md
  * @description: 
 -->
@@ -13,7 +13,7 @@
 
 使用方式
 `npm install textures-gradient`
-
+[demo](http://archy.ink/html/textures-gradient)
 ```javascript
 import texturesGradient from 'textures-gradient'
 const svg = d3
@@ -39,6 +39,5 @@ svg.call(tg);//调用之前svg必须有高宽
 rect.style("fill", t.url());
 
 ```
-
 ![example](https://github.com/ArchyInk/textures-gradient/blob/main/example.png)
 

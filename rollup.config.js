@@ -2,8 +2,8 @@
  * @Author: Archy
  * @Date: 2021-09-10 14:57:36
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-10 16:50:46
- * @FilePath: \textures-gradient\rollup.config.js
+ * @LastEditTime: 2021-09-14 10:14:24
+ * @FilePath: \archy_ink\textures-gradient\rollup.config.js
  * @description: 
  */
 import {uglify} from 'rollup-plugin-uglify';
@@ -16,7 +16,7 @@ export default [
 	{
 		input: 'src/main.js',
 		output: {
-			name: 'textures-gradient',
+			name: 'texturesGradient',
 			file: pkg.main,
 			format: 'umd'
 		},

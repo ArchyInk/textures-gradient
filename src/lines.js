@@ -2,11 +2,12 @@
  * @Author: Archy
  * @Date: 2021-09-09 14:09:00
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-13 17:30:06
- * @FilePath: \archy_ink\textures-gradient\src\lines.js
+ * @LastEditTime: 2021-09-14 16:34:24
+ * @FilePath: \textures-gradient\src\lines.js
  * @description: 在textures源码的基础上添加了line类型的渐变
  */
 import rand from './random.js'
+import { scaleLinear } from 'd3-scale'
 
 export default function lines() {
   let size = 20
@@ -76,8 +77,7 @@ export default function lines() {
           linearGradient[i].stop - linearGradient[i].start
         )
         const colors = []
-        const x = d3
-          .scaleLinear()
+        const x = scaleLinear()
           .domain([0, colorNum])
           .range([linearGradient[i].startColor, linearGradient[i].stopColor])
         for (let i = 0; i < colorNum; i++) {

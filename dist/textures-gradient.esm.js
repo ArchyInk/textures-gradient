@@ -1,3 +1,5 @@
+import { scaleLinear } from 'd3-scale';
+
 function random() {
   return "".concat(Math.random().toString(36), "00000000000000000").replace(/[^a-z]+/g, '').slice(0, 5);
 }
@@ -233,7 +235,7 @@ function lines() {
         var rate = (linearGradient[i].stop - linearGradient[i].start) / 100;
         var colorNum = Math.floor(linearGradient[i].stop - linearGradient[i].start);
         var colors = [];
-        var x = d3.scaleLinear().domain([0, colorNum]).range([linearGradient[i].startColor, linearGradient[i].stopColor]);
+        var x = scaleLinear().domain([0, colorNum]).range([linearGradient[i].startColor, linearGradient[i].stopColor]);
 
         for (var _i = 0; _i < colorNum; _i++) {
           colors.push(x(_i));

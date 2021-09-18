@@ -1,6 +1,6 @@
 {
   "name": "textures-gradient",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "add gradient effect on the basis of d3.textures",
   "main": "dist/textures-gradient.js",
   "module": "dist/textures-gradient.esm.js",
@@ -21,11 +21,12 @@
     "url": "https://github.com/ArchyInk/textures-gradient/issues"
   },
   "homepage": "https://github.com/ArchyInk/textures-gradient#readme",
-  "dependencies": {},
+  "dependencies": {
+    "d3-scale": "^4.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "d3-scale": "^4.0.0",
     "d3-selection": "^2.0.0",
     "faucet": "^0.0.1",
     "jsdom": "^16.2.2",

@@ -262,7 +262,7 @@ function lines() {
 
           var _rect = chunk.append('rect');
 
-          _rect.attr('width', box.width / 100).attr('height', box.height).attr('x', box.width * j / 100).style('fill', "url(#colormap_".concat(i, "_").concat(j, ")"));
+          _rect.attr('width', box.width / 100).attr('height', box.height * 2).attr('x', box.width * j / 100).style('fill', "url(#colormap_".concat(i, "_").concat(j, ")"));
         }
 
         var rect = group.append('rect');

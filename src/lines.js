@@ -2,7 +2,7 @@
  * @Author: Archy
  * @Date: 2021-09-09 14:09:00
  * @LastEditors: Archy
- * @LastEditTime: 2021-09-14 16:34:24
+ * @LastEditTime: 2021-09-18 11:22:37
  * @FilePath: \textures-gradient\src\lines.js
  * @description: 在textures源码的基础上添加了line类型的渐变
  */
@@ -109,7 +109,7 @@ export default function lines() {
           const rect = chunk.append('rect')
           rect
             .attr('width', box.width / 100)
-            .attr('height', box.height)
+            .attr('height', box.height * 2)
             .attr('x', (box.width * j) / 100)
             .style('fill', `url(#colormap_${i}_${j})`)
         }
